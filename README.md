@@ -7,4 +7,6 @@ There might be a lot of biases involved in single-touch attribution models: 100%
 ## Probabilistic Attribution Models
 These are based on machine learning and probabilistic models, like shapley value-based models, or Markov chains.
 
-(More info. coming soon)
+(More context coming soon)
+
+From these experiments, I aim to build a simple budget optimization engine.
