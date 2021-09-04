@@ -43,9 +43,28 @@ This model should be used when the number of channels for a particular campaign 
 #### Removal Effect
 > A campaign's effectiveness is determined by removing it from the graph and simulating buyer journeys to meausre the change in success rate without it in place.
 
-- <img src="https://latex.codecogs.com/gif.latex?O_t=removal effect(i)=1 - \frac{probability without i}{probability with i" /> 
-$removal effect(i)=1 - \frac{probability without i}{probability with i}$
+[removal_effect](imgs/removal_effect.png)
 
 If we want to find a channel's contribution, we can do so by removing it, and seeing how many conversions take place without that channel existing.
 
 From these experiments, I aim to build a simple budget optimization engine.
+
+### Shapley Value Model
+Shapley value models provide a stable way to measure influence of a channel and fairly divide the credit for sales conversions between channels based on their individual contribution to total pay off.
+> Cooperative game theory and the Shapley value provide marketing departments with an accurate and tailored solution for attribution that has the potential to deliver much more than the rule-based models are able to provide.
+
+These should be used when there are 15 or more channels in a particular campaign.
+
+- Considering a multi-player game, in which players work together to increase the likelihood of a desired result, Shapley value provides a way to fairly divide the payoffs between the players
+- Measure of players' average marginal contribution to each coalition. Players can join a coalition in different points of time, and are of varying degrees of influence. **Each ordering has the same probability of occurring. Each player is awarded by contributions of permutations.**
+
+> A coalition of players cooperates, and obtains a certain overall gain from that cooperation. Since some players may contribute more to the coalition than others or may possess different bargaining power, what final distribution of generated surplus among the players should arise in any particular game? Or phrased differently: how important is each player to the overall cooperation, and what payoff can he or she reasonably expect? The Shapley value provides one possible answer to this question.
+
+The campaign channels act as the players here. The various ways (subsets) in which channels interact with accounts throughout the journey are the coalitions. The characteristic function, $v$, assigns a value to each outcome (conversion), and the conversion represents the payoff when the channels work together of the journey. This might also be represented by revenue, or the total number of sales conversions, etc.
+
+#### Formal Definition
+A **coalitional game** is a set *N* of *n* players and a function *v* that maps subsets of players to real numbers: *v: 2^N --> R*
+
+If *S* is a coalition of players, then *v(S)*, called the *worth* of coalition *S*, describes the *total expected sum* of payoffs the members of *S* can obtain by cooperation.
+
+The Shapley value distributes the total gains of players, assuming that they *all* cooperate. The amount that the player *i* gets given a coalitional game *(v, N)* is:
