@@ -82,4 +82,4 @@ Some other aggregate measures we can try are the median or quantile-based measur
 
 It's important to note that we shouldn't *just* invest in Paid Search and Facebook, or else we can lose valuable customers.
 
-
+## 
