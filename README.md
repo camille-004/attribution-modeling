@@ -82,4 +82,8 @@ Some other aggregate measures we can try are the median or quantile-based measur
 
 It's important to note that we shouldn't *just* invest in Paid Search and Facebook, or else we can lose valuable customers.
 
-## 
+## Budget Optimization Engine Demo
+I used `gekko` for optimization. The coefficients are derived from the mean weights of each marketing campaign channel (ensemble model combining all eight models), and I used a simple linear optimization model subject to $100 for the lower bound and the user-inputted budget for the upper bound.
+
+
+![demo](imgs/opt_demo.gif)
