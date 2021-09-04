@@ -43,7 +43,7 @@ This model should be used when the number of channels for a particular campaign 
 #### Removal Effect
 > A campaign's effectiveness is determined by removing it from the graph and simulating buyer journeys to meausre the change in success rate without it in place.
 
-[removal_effect](imgs/removal_effect.png)
+![removal_effect](imgs/removal_effect.png)
 
 If we want to find a channel's contribution, we can do so by removing it, and seeing how many conversions take place without that channel existing.
 
@@ -60,7 +60,7 @@ These should be used when there are 15 or more channels in a particular campaign
 
 > A coalition of players cooperates, and obtains a certain overall gain from that cooperation. Since some players may contribute more to the coalition than others or may possess different bargaining power, what final distribution of generated surplus among the players should arise in any particular game? Or phrased differently: how important is each player to the overall cooperation, and what payoff can he or she reasonably expect? The Shapley value provides one possible answer to this question.
 
-The campaign channels act as the players here. The various ways (subsets) in which channels interact with accounts throughout the journey are the coalitions. The characteristic function, $v$, assigns a value to each outcome (conversion), and the conversion represents the payoff when the channels work together of the journey. This might also be represented by revenue, or the total number of sales conversions, etc.
+The campaign channels act as the players here. The various ways (subsets) in which channels interact with accounts throughout the journey are the coalitions. The characteristic function, *v*, assigns a value to each outcome (conversion), and the conversion represents the payoff when the channels work together of the journey. This might also be represented by revenue, or the total number of sales conversions, etc.
 
 #### Formal Definition
 A **coalitional game** is a set *N* of *n* players and a function *v* that maps subsets of players to real numbers: *v: 2^N --> R*
@@ -68,3 +68,9 @@ A **coalitional game** is a set *N* of *n* players and a function *v* that maps 
 If *S* is a coalition of players, then *v(S)*, called the *worth* of coalition *S*, describes the *total expected sum* of payoffs the members of *S* can obtain by cooperation.
 
 The Shapley value distributes the total gains of players, assuming that they *all* cooperate. The amount that the player *i* gets given a coalitional game *(v, N)* is:
+
+![shapley_1](imgs/shapley_eq_1.png)
+
+where *n* is the total number of players and the sum extens over **all subsets of $S$ of $N$ not containing players *i***. *Interpretation*: Imagine the coalition being formed one actor at a time, with each actor demanding their contribution *(v(S U {i})- v(S))* as a fair compensation, and then for each actor take the average of this contribution over all the possible different permutations in which the coalition can be formed. This formula can also be expressed as:
+
+![shapley_2](imgs/shapley_eq_2.png)
