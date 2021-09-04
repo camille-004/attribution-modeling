@@ -74,3 +74,12 @@ The Shapley value distributes the total gains of players, assuming that they *al
 where *n* is the total number of players and the sum extens over **all subsets of $S$ of $N$ not containing players *i***. *Interpretation*: Imagine the coalition being formed one actor at a time, with each actor demanding their contribution *(v(S U {i})- v(S))* as a fair compensation, and then for each actor take the average of this contribution over all the possible different permutations in which the coalition can be formed. This formula can also be expressed as:
 
 ![shapley_2](imgs/shapley_eq_2.png)
+
+## Evaluation
+Facebook and Paid Search seem to dominate in most with most of the models. Online Display has been almost entirely consistent in getting the lowest conversion credit. We'll take the mean across all models to get rid of biases. Even though our results are similar across the board, we should aggregate our results because we might want to invest \$1 million dollars into one marketing channel. For now, well use our means as the final weighting. We could experience with different weightings and aggregations by means of A/B-testing over several months.
+
+Some other aggregate measures we can try are the median or quantile-based measures. 
+
+It's important to note that we shouldn't *just* invest in Paid Search and Facebook, or else we can lose valuable customers.
+
+
